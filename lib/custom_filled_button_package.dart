@@ -1,2 +1,2 @@
 library custom_filled_button_package;
-export 'src/custom_text.dart';
+export 'src/button/custom_text_fiield.dart';
