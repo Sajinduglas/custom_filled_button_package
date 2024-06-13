@@ -13,7 +13,7 @@ class CustomFilledButton extends StatelessWidget {
   final Color? textColor;
   final WidgetStateProperty<Color?>? buttonColor;
   final FontWeight? textFontWeight;
-   final String? chekText;
+   final String chekText;
    
      final IconData?  checkIcon;
      
