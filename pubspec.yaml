@@ -1,7 +1,7 @@
 name: custom_filled_button_package
-description: "A new Flutter project."
+description: "A new flutter package with customised filled button"
 version: 0.0.1
-homepage:
+homepage: https://github.com/Sajinduglas/custom_filled_button_package.git
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
