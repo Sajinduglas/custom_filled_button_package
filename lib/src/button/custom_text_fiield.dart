@@ -1,5 +1,6 @@
 import 'package:checkbox_with_text/checkbox_with_text.dart';
 import 'package:flutter/material.dart';
+import 'package:login_textfield/login_textfield.dart';
 
 class CustomFilledButton extends StatelessWidget {
   final IconData? icon;
@@ -13,11 +14,15 @@ class CustomFilledButton extends StatelessWidget {
   final Color? textColor;
   final WidgetStateProperty<Color?>? buttonColor;
   final FontWeight? textFontWeight;
-   final String? chekText;
+  //  final String? chekText;
    
-     final IconData?  checkIcon;
+    //  final IconData?  checkIcon;
      
-       final String? checkButtonText;
+      //  final String? checkButtonText;
+       
+         final String? HeaderText;
+         
+           final TextEditingController? Controller;
 
    CustomFilledButton({
     super.key,
@@ -30,8 +35,8 @@ class CustomFilledButton extends StatelessWidget {
     this.textFontSize,
     this.textFontWeight,
     this.textColor,
-    this.buttonColor, 
-     this.chekText, this.checkIcon, this.checkButtonText,
+    this.buttonColor,  this.HeaderText, this.Controller, 
+     
   }) : assert(icon != null || buttonText != null,
             'At least one value (icon or buttonText) must be provided.');
 
@@ -79,7 +84,7 @@ class CustomFilledButton extends StatelessWidget {
           ),
         ),
         //  CheckboxWidget(isChecked: true, onChanged: (bool? value) {  }, text:"amos" ,filledButtonText: checkButtonText??"",)
-        
+        LoginTextfield(controller: Controller,headerName: HeaderText,)
       ],
     );
   }

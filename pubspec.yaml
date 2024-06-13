@@ -19,6 +19,10 @@ dependencies:
     git:
       url: https://github.com/AmosPeterAlex/checkbox_with_text.git
       ref: master  # or the branch, tag, or commit you want to use
+  login_textfield:
+    git:
+      url: https://github.com/sreejithcs007/login_textfield.git
+      ref: master 
 
 dev_dependencies:
   flutter_test:
