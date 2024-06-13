@@ -1,3 +1,4 @@
+import 'package:checkbox_with_text/checkbox_with_text.dart';
 import 'package:flutter/material.dart';
 
 class CustomFilledButton extends StatelessWidget {
@@ -31,42 +32,49 @@ class CustomFilledButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return FilledButton(
-      style: ButtonStyle(
-        padding: WidgetStateProperty.all(
-            EdgeInsets.symmetric(horizontal: 20, vertical: 5)),
-        backgroundColor: buttonColor ??
-            WidgetStateProperty.all<Color>(
-              Colors.blue),
-        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-                6.0), // Rectangular shape with rounded corners
+    return Column(
+      children: [
+        FilledButton(
+          style: ButtonStyle(
+            padding: WidgetStateProperty.all(
+                EdgeInsets.symmetric(horizontal: 20, vertical: 5)),
+            backgroundColor: buttonColor ??
+                WidgetStateProperty.all<Color>(
+                  Colors.blue),
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(
+                    6.0), // Rectangular shape with rounded corners
+              ),
+            ),
+          ).merge(buttonStyle),
+          onPressed: onPressed,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (icon != null)
+                FittedBox(
+                  child: Icon(icon, size: iconSize, color: iconColor),
+                ),
+              if (icon != null && buttonText != null)
+                SizedBox(width: size.width * .02), // Space between icon and text
+              if (buttonText != null)
+                FittedBox(
+                    child: Text(
+                  buttonText ?? "",
+                  style: TextStyle(
+                    fontSize: textFontSize??15,
+                    fontWeight: textFontWeight??FontWeight.w500,
+                    color: Colors.black ,
+                  ),
+                )),
+            ],
           ),
         ),
-      ).merge(buttonStyle),
-      onPressed: onPressed,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (icon != null)
-            FittedBox(
-              child: Icon(icon, size: iconSize, color: iconColor),
-            ),
-          if (icon != null && buttonText != null)
-            SizedBox(width: size.width * .02), // Space between icon and text
-          if (buttonText != null)
-            FittedBox(
-                child: Text(
-              buttonText ?? "",
-              style: TextStyle(
-                fontSize: textFontSize??15,
-                fontWeight: textFontWeight??FontWeight.w500,
-                color: Colors.black ,
-              ),
-            )),
-        ],
-      ),
+         CheckboxWidget(isChecked: true, onChanged: (value) {
+           
+         }, text: "amos")
+      ],
     );
   }
 }
