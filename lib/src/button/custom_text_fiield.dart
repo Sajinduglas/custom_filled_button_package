@@ -13,7 +13,11 @@ class CustomFilledButton extends StatelessWidget {
   final Color? textColor;
   final WidgetStateProperty<Color?>? buttonColor;
   final FontWeight? textFontWeight;
-   final String chekText;
+   final String? chekText;
+   
+     final IconData?  checkIcon;
+     
+       final String? checkButtonText;
 
   const CustomFilledButton({
     super.key,
@@ -26,7 +30,7 @@ class CustomFilledButton extends StatelessWidget {
     this.textFontSize,
     this.textFontWeight,
     this.textColor,
-    this.buttonColor, required this.chekText,
+    this.buttonColor, required this.chekText, this.checkIcon, this.checkButtonText,
   }) : assert(icon != null || buttonText != null,
             'At least one value (icon or buttonText) must be provided.');
 
@@ -73,7 +77,7 @@ class CustomFilledButton extends StatelessWidget {
             ],
           ),
         ),
-         CheckboxWidget(isChecked: true, onChanged: (bool? value) {  }, text: "chekText",filledButtonIcon: Icons.access_alarm,)
+         CheckboxWidget(isChecked: true, onChanged: (bool? value) {  }, text:chekText??"" ,filledButtonIcon: checkIcon??"",filledButtonText: checkButtonText??"",)
         
       ],
     );
