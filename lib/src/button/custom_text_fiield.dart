@@ -77,7 +77,7 @@ class CustomFilledButton extends StatelessWidget {
             ],
           ),
         ),
-         CheckboxWidget(isChecked: true, onChanged: (bool? value) {  }, text:chekText??"" ,filledButtonIcon: checkIcon??"",filledButtonText: checkButtonText??"",)
+         CheckboxWidget(isChecked: true, onChanged: (bool? value) {  }, text:chekText??"" ,filledButtonText: checkButtonText??"",)
         
       ],
     );
