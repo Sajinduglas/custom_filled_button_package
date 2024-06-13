@@ -2,6 +2,7 @@ name: custom_filled_button_package
 description: "A new flutter package with customised filled button"
 version: 0.0.1
 homepage: https://github.com/Sajinduglas/custom_filled_button_package.git
+publish_to: none
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
@@ -10,6 +11,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # checkbox_with_text:
+  #    git:
+  #     url: https://github.com/AmosPeterAlex/checkbox_with_text.git
+  #     ref: master  
+  checkbox_with_text:
+    git:
+      url: https://github.com/AmosPeterAlex/checkbox_with_text.git
+      ref: master  # or the branch, tag, or commit you want to use
 
 dev_dependencies:
   flutter_test:
