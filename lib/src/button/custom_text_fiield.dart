@@ -14,17 +14,14 @@ class CustomFilledButton extends StatelessWidget {
   final Color? textColor;
   final WidgetStateProperty<Color?>? buttonColor;
   final FontWeight? textFontWeight;
-  //  final String? chekText;
-   
-    //  final IconData?  checkIcon;
-     
-        final String? checkButtonText;
-       
-         final String? HeaderText;
-         
-           final TextEditingController? Controller;
 
-   CustomFilledButton({
+  final String? checkButtonText;
+
+  final String? HeaderText;
+
+  final TextEditingController? Controller;
+
+  CustomFilledButton({
     super.key,
     this.icon,
     this.buttonStyle,
@@ -35,24 +32,25 @@ class CustomFilledButton extends StatelessWidget {
     this.textFontSize,
     this.textFontWeight,
     this.textColor,
-    this.buttonColor,  this.HeaderText, this.Controller, this.checkButtonText, 
-     
+    this.buttonColor,
+    this.HeaderText,
+    this.Controller,
+    this.checkButtonText,
   }) : assert(icon != null || buttonText != null,
             'At least one value (icon or buttonText) must be provided.');
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-   
+
     return Column(
       children: [
         FilledButton(
           style: ButtonStyle(
             padding: WidgetStateProperty.all(
                 EdgeInsets.symmetric(horizontal: 20, vertical: 5)),
-            backgroundColor: buttonColor ??
-                WidgetStateProperty.all<Color>(
-                  Colors.blue),
+            backgroundColor:
+                buttonColor ?? WidgetStateProperty.all<Color>(Colors.blue),
             shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(
@@ -69,22 +67,26 @@ class CustomFilledButton extends StatelessWidget {
                   child: Icon(icon, size: iconSize, color: iconColor),
                 ),
               if (icon != null && buttonText != null)
-                SizedBox(width: size.width * .02), // Space between icon and text
+                SizedBox(
+                    width: size.width * .02), // Space between icon and text
               if (buttonText != null)
                 FittedBox(
                     child: Text(
                   buttonText ?? "",
                   style: TextStyle(
-                    fontSize: textFontSize??15,
-                    fontWeight: textFontWeight??FontWeight.w500,
-                    color: Colors.black ,
+                    fontSize: textFontSize ?? 15,
+                    fontWeight: textFontWeight ?? FontWeight.w500,
+                    color: Colors.black,
                   ),
                 )),
             ],
           ),
         ),
-         CheckboxWidget(isChecked: true, onChanged: (bool? value) {  }, text:"amos" ,filledButtonText: checkButtonText??"",),
-        LoginTextfield(controller: Controller,headerName: HeaderText,)
+        //  CheckboxWidget(isChecked: true, onChanged: (bool? value) {  }, text:"amos" ,filledButtonText: checkButtonText??"",),
+        LoginTextfield(
+          controller: Controller,
+          headerName: HeaderText,
+        )
       ],
     );
   }
