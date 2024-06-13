@@ -19,7 +19,7 @@ class CustomFilledButton extends StatelessWidget {
      
        final String? checkButtonText;
 
-  const CustomFilledButton({
+   CustomFilledButton({
     super.key,
     this.icon,
     this.buttonStyle,
@@ -30,7 +30,8 @@ class CustomFilledButton extends StatelessWidget {
     this.textFontSize,
     this.textFontWeight,
     this.textColor,
-    this.buttonColor, required this.chekText, this.checkIcon, this.checkButtonText,
+    this.buttonColor, 
+     this.chekText, this.checkIcon, this.checkButtonText,
   }) : assert(icon != null || buttonText != null,
             'At least one value (icon or buttonText) must be provided.');
 
