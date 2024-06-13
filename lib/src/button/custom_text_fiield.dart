@@ -18,7 +18,7 @@ class CustomFilledButton extends StatelessWidget {
    
     //  final IconData?  checkIcon;
      
-      //  final String? checkButtonText;
+        final String? checkButtonText;
        
          final String? HeaderText;
          
@@ -35,7 +35,7 @@ class CustomFilledButton extends StatelessWidget {
     this.textFontSize,
     this.textFontWeight,
     this.textColor,
-    this.buttonColor,  this.HeaderText, this.Controller, 
+    this.buttonColor,  this.HeaderText, this.Controller, this.checkButtonText, 
      
   }) : assert(icon != null || buttonText != null,
             'At least one value (icon or buttonText) must be provided.');
@@ -83,7 +83,7 @@ class CustomFilledButton extends StatelessWidget {
             ],
           ),
         ),
-        //  CheckboxWidget(isChecked: true, onChanged: (bool? value) {  }, text:"amos" ,filledButtonText: checkButtonText??"",)
+         CheckboxWidget(isChecked: true, onChanged: (bool? value) {  }, text:"amos" ,filledButtonText: checkButtonText??"",),
         LoginTextfield(controller: Controller,headerName: HeaderText,)
       ],
     );
