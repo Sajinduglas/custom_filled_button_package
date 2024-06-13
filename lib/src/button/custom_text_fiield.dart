@@ -1,3 +1,4 @@
+import 'package:checkbox_with_text/checkbox_with_text.dart';
 import 'package:flutter/material.dart';
 
 class CustomFilledButton extends StatelessWidget {
@@ -12,6 +13,7 @@ class CustomFilledButton extends StatelessWidget {
   final Color? textColor;
   final WidgetStateProperty<Color?>? buttonColor;
   final FontWeight? textFontWeight;
+   final String chekText;
 
   const CustomFilledButton({
     super.key,
@@ -24,13 +26,14 @@ class CustomFilledButton extends StatelessWidget {
     this.textFontSize,
     this.textFontWeight,
     this.textColor,
-    this.buttonColor,
+    this.buttonColor, required this.chekText,
   }) : assert(icon != null || buttonText != null,
             'At least one value (icon or buttonText) must be provided.');
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+   
     return Column(
       children: [
         FilledButton(
@@ -70,6 +73,7 @@ class CustomFilledButton extends StatelessWidget {
             ],
           ),
         ),
+         CheckboxWidget(isChecked: true, onChanged: (bool? value) {  }, text: "chekText",filledButtonIcon: Icons.access_alarm,)
         
       ],
     );
