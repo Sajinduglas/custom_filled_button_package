@@ -1,9 +1,9 @@
 
-## [0.0.1] - TODO: 
+## [0.0.1] - 
 
 * TODO:  intial version
-## [0.0.2] - TODO: modified
+## [0.0.2] -  modified
 
-* TODO:  added another package to this package
+*   added another package to this package
 
 

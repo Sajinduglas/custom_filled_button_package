@@ -23,6 +23,10 @@ dependencies:
     git:
       url: https://github.com/sreejithcs007/login_textfield.git
       ref: master 
+  nexteon_group_packages:
+    git:
+      url: https://github.com/sreejithcs007/widget_packages.git
+      ref: master 
 
 dev_dependencies:
   flutter_test:
