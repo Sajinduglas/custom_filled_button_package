@@ -126,13 +126,15 @@ class PackageChecking extends StatelessWidget {
   final String subtext;
   final List<TextFieldConfig> textFieldConfigs;
   final void Function() onpressed;
+  
+  final String buttonText;
 
   const PackageChecking({
     super.key,
     required this.headerText,
     required this.subtext,
     required this.textFieldConfigs,
-    required this.onpressed,
+    required this.onpressed, required this.buttonText,
   });
 
   @override
@@ -190,7 +192,7 @@ class PackageChecking extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: CustomFilledButton(
-                      buttonText: "Login",
+                      buttonText: buttonText,
                     ),
                   ),
                   Spacer(),
